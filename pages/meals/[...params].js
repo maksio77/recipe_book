@@ -1,7 +1,5 @@
 import { useRouter } from "next/router";
-
-
-import DATA from "@/data/data";
+import CardDetails from "@/components/CardDetails";
 
 
 const MealDetailPage = () => {
@@ -9,16 +7,8 @@ const MealDetailPage = () => {
       const params = router.query.params
       const id = params[1]; 
 
-      const findMeal = DATA.filter(meal => {
-            if(meal.id === id) {
-                  return meal;
-            }
-      });
-
-      console.log(findMeal);
-
       return (
-            <div>MealDetailPage </div>
+            <CardDetails mealId={id}/>
       )
 }
 

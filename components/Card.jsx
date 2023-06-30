@@ -4,7 +4,7 @@ import { Card, Button, Col } from "react-bootstrap";
 
 
 const MealCard = ({meal}) => {
-      const truncatedText = meal.instructions.slice(0, 40);
+      const truncatedText = meal.instructions[0].slice(0, 40);
 
       return (
       <Col>
