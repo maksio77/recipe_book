@@ -3,15 +3,17 @@ import MealCard from "./Card";
 
 const CardList = ({meals}) => {
   return (
-    <Container>
-      <Row>
-        {
-          meals.map(meal => {
-            return <MealCard key={meal.id} meal={meal}/>
-          })
-        }
-      </Row>
-    </Container>
+    <>
+      {meals.length != 0 ? (<Container>
+        <Row >
+          {
+            meals.map(meal => {
+              return <MealCard key={meal.id} meal={meal}/>
+            })
+          }
+        </Row>
+      </Container>) : <h1 className="d-flex justify-content-center text-danger">Ви не маєте обраних страв 😕</h1>}
+    </>
   )
 }
 
