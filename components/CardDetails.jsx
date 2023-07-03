@@ -78,7 +78,7 @@ const CardDetails = ({ mealId }) => {
             <h3 className="m-3">Інгредієнти :</h3>
             <ListGroup as="ol" numbered>
               {meal.ingredients.map((ingredient) => (
-                <ListGroup.Item as="li" variant="dark">
+                <ListGroup.Item key={ingredient} as="li" variant="dark">
                   {ingredient.toUpperCase()}
                 </ListGroup.Item>
               ))}
@@ -88,9 +88,9 @@ const CardDetails = ({ mealId }) => {
         <Col>
           <div className="m-3">
             <h3 className="m-3">Кроки приготування :</h3>
-            <ListGroup>
+            <ListGroup as="ol" numbered>
               {meal.instructions.map((instruction) => (
-                <ListGroupItem variant="light">{instruction}</ListGroupItem>
+                <ListGroupItem key={instruction} as="li" variant="light">{instruction}</ListGroupItem>
               ))}
             </ListGroup>
             <Link href="/">
